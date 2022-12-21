@@ -72,7 +72,7 @@ public class UIManager : MonoBehaviour
     {
         CreatTowerNum -= 1;
         towerNum.text = $"Tower :{CreatTowerNum.ToString()}";
-        Debug.Log("CreatTowerNum" + CreatTowerNum);
+        //Debug.Log("CreatTowerNum" + CreatTowerNum);
         return CreatTowerNum;
     }
 }

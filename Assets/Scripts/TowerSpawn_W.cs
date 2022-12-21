@@ -45,7 +45,7 @@ public class TowerSpawn_W : MonoBehaviour
             if(chenctower == check)
             {
                 Debug.Log("## 들어갔니");
-                Destroy_Tower();
+                hit.transform.GetComponent<Block>().Destroy_Towers();
             }
         }
     }
@@ -57,7 +57,7 @@ public class TowerSpawn_W : MonoBehaviour
         if (tower != null)
         {
             check += 1;
-            Debug.Log("## 몇개 만들어짐 " + check);
+            //Debug.Log("## 몇개 만들어짐 " + check);
 
             return check;
         }
@@ -65,8 +65,4 @@ public class TowerSpawn_W : MonoBehaviour
         return check;
     }
 
-    void Destroy_Tower()
-    {
-        Destroy(this.gameObject);
-    }
 }

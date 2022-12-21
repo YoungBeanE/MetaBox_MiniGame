@@ -35,9 +35,9 @@ public class Block : MonoBehaviour
     }
 
     // 타워 삭재
-    public void Destroy_Towers(Transform tower)
+    public void Destroy_Towers()
     {
-        
+        Destroy(TowerPerfab);
     }
 
 
