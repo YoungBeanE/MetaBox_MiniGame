@@ -36,11 +36,61 @@ public class MonsterSpawner : MonoBehaviour
 
     IEnumerator SpawnMonster()
     {
-        while (isGaming)
+        for (int i = 0; i < 5; i++)
         {
             Monster mob = Instantiate<Monster>(monsterPref0, map.myPath[0], Quaternion.identity);
             mob.SettingPath(map.myPath);
+            yield return s1;
         }
+        yield return s5;
+
+        for (int i = 0; i < 13; i++)
+        {
+            if (i < 10)
+            {
+                Monster mob = Instantiate<Monster>(monsterPref0, map.myPath[0], Quaternion.identity);
+                mob.SettingPath(map.myPath);
+            }
+            else
+            {
+                Monster mob = Instantiate<Monster>(monsterPref1, map.myPath[0], Quaternion.identity);
+                mob.SettingPath(map.myPath);
+            }
+            yield return s1;
+        }
+        yield return s5;
+
+        for (int i = 0; i < 15; i++)
+        {
+            if (i < 10)
+            {
+                Monster mob = Instantiate<Monster>(monsterPref0, map.myPath[0], Quaternion.identity);
+                mob.SettingPath(map.myPath);
+            }
+            else
+            {
+                Monster mob = Instantiate<Monster>(monsterPref1, map.myPath[0], Quaternion.identity);
+                mob.SettingPath(map.myPath);
+            }
+            yield return s1;
+        }
+        yield return s5;
+
+        for (int i = 0; i < 22; i++)
+        {
+            if (i < 15)
+            {
+                Monster mob = Instantiate<Monster>(monsterPref0, map.myPath[0], Quaternion.identity);
+                mob.SettingPath(map.myPath);
+            }
+            else
+            {
+                Monster mob = Instantiate<Monster>(monsterPref1, map.myPath[0], Quaternion.identity);
+                mob.SettingPath(map.myPath);
+            }
+            yield return s1;
+        }
+        
         yield return null;
     }
 }

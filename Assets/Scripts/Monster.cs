@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour
     [SerializeField] ResourceObject monsterData = null;
 
     List<Vector2> mobPath = null;
+    WaitForSeconds s1 = new WaitForSeconds(1);
 
     public void SettingPath(List<Vector2> path)
     {
@@ -17,7 +18,23 @@ public class Monster : MonoBehaviour
     void Start()
     {
         //findPath(2, 4, 1, 1);
+        StartCoroutine(nameof(MoveMonster));
     }
+
+    IEnumerator MoveMonster()
+    {
+        yield return s1;
+
+        for(int i = 0; i < mobPath.Count; i++)
+        {
+            transform.position = mobPath[i];
+            yield return s1;
+        }
+        Destroy(this.gameObject);
+        yield return null;
+    }
+    
+
     /*
     ANode getNodeInOpenList()
     {
