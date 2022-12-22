@@ -25,9 +25,10 @@ public class Block : MonoBehaviour
 
         if (Tower != null) return;
 
-
         if (isTowerCanInst)
         {
+
+
             Tower = Instantiate(TowerPerfab, instPos.position, Quaternion.identity, this.transform);
 
             if (check == 0) return;
@@ -37,10 +38,9 @@ public class Block : MonoBehaviour
     // 타워 삭재
     public void Destroy_Towers()
     {
-        Destroy(TowerPerfab);
+        Destroy(TowerPerfab.gameObject);
+        Debug.Log("삭제함??");
     }
-
-
 
 }
 

@@ -29,6 +29,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI GoldNumText = null;
     [SerializeField] TextMeshProUGUI towerNum = null;
 
+    [SerializeField] GameObject GameOver = null;
+
     public Action<int> towerCountCheck;
 
     int Wave1_coin = 150;
@@ -41,6 +43,7 @@ public class UIManager : MonoBehaviour
         GoldNumText.text = $"Gold : {Wave1_coin.ToString()}";
         CreatTowerNum = (Wave1_coin / tower_bycoin);
         checkOriginCount = CreatTowerNum;
+        //Debug.Log(checkOriginCount);
         towerNum.text = $"Tower :{CreatTowerNum.ToString()}";
     }
 
@@ -48,8 +51,8 @@ public class UIManager : MonoBehaviour
     {
         // 코인 텍스트에 -70 해주기;
         Wave1_coin -= 70;
+        if (Wave1_coin < 0) return;
         GoldNumText.text = $"Gold : {Wave1_coin.ToString()}";
-
         towerText_Minus();
     }
 
@@ -64,8 +67,10 @@ public class UIManager : MonoBehaviour
     {
         CreatTowerNum += 1;
         towerNum.text = $"Tower :{CreatTowerNum.ToString()}";
-        Debug.Log("CreatTowerNum" + CreatTowerNum);
+        //Debug.Log("CreatTowerNum" + CreatTowerNum);
         return CreatTowerNum;
+
+        if (CreatTowerNum > checkOriginCount) { return checkOriginCount;}
     }
      
     int towerText_Minus()
@@ -74,5 +79,7 @@ public class UIManager : MonoBehaviour
         towerNum.text = $"Tower :{CreatTowerNum.ToString()}";
         //Debug.Log("CreatTowerNum" + CreatTowerNum);
         return CreatTowerNum;
+
+        if (CreatTowerNum < 0) return 0;
     }
 }

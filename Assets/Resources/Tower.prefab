@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad337cc8c2f6f9842b882cfeeebae33d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3978258834117909250, guid: b0798fd081494c9429a852802ce49afa, type: 3}
+  bulletPrefab: {fileID: 624870532225881060, guid: b0798fd081494c9429a852802ce49afa, type: 3}
+  attack: 5
+  spawntime: 1.2
+  BulletPos: {fileID: 8328275561287506328}
 --- !u!1 &4066551710329644052
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4712559576405549222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29, y: 0.12, z: 0}
+  m_LocalPosition: {x: -0.002, y: 0.465, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
