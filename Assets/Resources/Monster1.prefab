@@ -94,7 +94,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4564205268912669675}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 138d279592bd3fb49beb2d2235f576dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monsterData: {fileID: 11400000, guid: 3b54df6f732101247ae928d01c2d0416, type: 2}
+=======
+  m_Script: {fileID: 11500000, guid: 7a53c9e541c296f47b02f0cc0cdcc9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: 9145f698ad45c9344b9ede5451daa03b, type: 2}
+>>>>>>> main
