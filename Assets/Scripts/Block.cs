@@ -15,8 +15,6 @@ public class Block : MonoBehaviour
 
     GameObject Tower = null;
 
-    bool isTowerCanInst = true;
-
     int check = 0;
 
     void Awake()
@@ -27,37 +25,18 @@ public class Block : MonoBehaviour
     {
         IsBlock = false;
         spriteRenderer.sprite = road;
-
     }
 
-    
-    // Ÿ�� ����
+    // 타워 생성
     public void Inst_Towers(Transform instPos)
     {
         check = UIManager.Inst.CreatTowerNum;
 
         if (Tower != null) return;
 
-        if (isTowerCanInst)
-        {
+        Tower = Instantiate(TowerPerfab, instPos.position, Quaternion.identity, this.transform);
 
-
-            Tower = Instantiate(TowerPerfab, instPos.position, Quaternion.identity, this.transform);
-
-            if (check == 0) return;
-        }
-    }
-
-    public void Destroy_Towers()
-    {
-        Destroy(TowerPerfab.gameObject);
-        Debug.Log("������??");
+        if (check == 0) return;
     }
 
 }
-
-
-
-
-
-

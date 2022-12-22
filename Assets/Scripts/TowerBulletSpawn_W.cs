@@ -21,9 +21,7 @@ public class TowerBulletSpawn_W : MonoBehaviour
         //최근 생성 이후의 누적 시간을 0으로 초기화
         timeAfterSpawn = 0f;
 
-        target = FindObjectOfType<Monster_Test_W>().transform;
-
-
+        target = FindObjectOfType<Monster>().transform;
     }
 
 
@@ -31,11 +29,11 @@ public class TowerBulletSpawn_W : MonoBehaviour
     void Update()
     {
         timeAfterSpawn += Time.deltaTime;
-        Debug.Log("timeAfterSpawn : " + timeAfterSpawn);
+        //Debug.Log("timeAfterSpawn : " + timeAfterSpawn);
 
         if(timeAfterSpawn >= spawntime) 
         {
-            Debug.Log("timeAfterSpawn : " + timeAfterSpawn);
+            //Debug.Log("timeAfterSpawn : " + timeAfterSpawn);
 
             // 누적된 시간을 리셋
             timeAfterSpawn = 0f;

@@ -25,8 +25,6 @@ public class TowerSpawn_W : MonoBehaviour
         {
             RayCheck();
         }
-
-
     }
 
     void RayCheck()
@@ -61,10 +59,7 @@ public class TowerSpawn_W : MonoBehaviour
         {
             Debug.Log("hits.Length" + hits.Length);
             RaycastHit2D hit = hits[i];
-
         }
-
-
     }
 
     int CheckMapTowerNum()
@@ -86,5 +81,4 @@ public class TowerSpawn_W : MonoBehaviour
         Debug.Log("타워 삭제 함" + tower);
         Destroy(tower.gameObject);
     }
-
 }

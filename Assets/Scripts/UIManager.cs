@@ -25,16 +25,25 @@ public class UIManager : MonoBehaviour
         }
     }
     #endregion
-    [Header("재화")]
-    [SerializeField] TextMeshProUGUI GoldNumText = null;
-    [Header("타워 설치가능한 수량")]
-    [SerializeField] TextMeshProUGUI towerNum = null;
-    [Header("플레이어 체력")]
-    [SerializeField] GameObject[] playerHp = null;
-    [Header("게임 종료")]
+
+    [Header("게임 시작 판넬")]
+    [SerializeField] GameObject TitlePanel = null;
+    [SerializeField] GameObject block = null;
+
+    [Header("인게임 UI")]
+    [SerializeField] GameObject InGameUI = null;
+
+    [Header("게임 종료 판넬")]
     [SerializeField] GameObject GameOver = null;
 
-    public Action<int> towerCountCheck;
+    [Header("재화UI")]
+    [SerializeField] TextMeshProUGUI GoldNumText = null;
+    [Header("타워 설치가능한 수량UI")]
+    [SerializeField] TextMeshProUGUI towerNum = null;
+    [Header("플레이어 체력UI")]
+    [SerializeField] GameObject[] playerHp = null;
+
+    [SerializeField] GameObject towerspawn = null;
 
     int Wave1_coin = 150;
     int tower_bycoin = 70;
@@ -42,6 +51,14 @@ public class UIManager : MonoBehaviour
     public int checkOriginCount = 0;
 
     void Awake()
+    {
+        TitlePanel.gameObject.SetActive(true);
+        InGameUI.gameObject.SetActive(false);
+        GameOver.gameObject.SetActive(false);
+        towerspawn.SetActive(false);
+    }
+
+    void Start()
     {
         GoldNumText.text = $"Gold : {Wave1_coin.ToString()}";
         CreatTowerNum = (Wave1_coin / tower_bycoin);
@@ -85,4 +102,31 @@ public class UIManager : MonoBehaviour
 
         if (CreatTowerNum < 0) return 0;
     }
+
+    #region 스타트 판넬
+    public void Onclick_StartButton()
+    {
+        if (TitlePanel.activeInHierarchy == true)
+        {
+            activeBlock();
+            TitlePanel.SetActive(false);
+            // 인게임 판넬 및 타워생성 활성화
+            InGameUI.SetActive(true);
+            towerspawn.SetActive(true);
+        }
+        else
+            TitlePanel.SetActive(true);
+    }
+
+
+    public void activeBlock()
+    {
+        if (block.activeInHierarchy == false)
+            block.SetActive(true);
+        else
+            block.SetActive(false);
+    }
+    #endregion
+
+
 }
