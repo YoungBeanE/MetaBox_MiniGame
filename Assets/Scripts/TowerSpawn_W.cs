@@ -9,7 +9,6 @@ public class TowerSpawn_W : MonoBehaviour
     int check = 1;
     int CreatTower = 0;
 
-    //GameObject MapParent = null;
     GameObject tower = null;
     Block block = null;
 
@@ -76,9 +75,4 @@ public class TowerSpawn_W : MonoBehaviour
         return check;
     }
 
-    void DestroyTower()
-    {
-        Debug.Log("타워 삭제 함" + tower);
-        Destroy(tower.gameObject);
-    }
 }

@@ -118,7 +118,6 @@ public class UIManager : MonoBehaviour
             TitlePanel.SetActive(true);
     }
 
-
     public void activeBlock()
     {
         if (block.activeInHierarchy == false)
@@ -126,7 +125,6 @@ public class UIManager : MonoBehaviour
         else
             block.SetActive(false);
     }
+
     #endregion
-
-
 }

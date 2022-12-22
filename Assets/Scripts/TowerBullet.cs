@@ -14,7 +14,7 @@ public class TowerBullet : MonoBehaviour
     void Greatbullet()
     {
 
-        if (this.transform.position.y > 3)
+        if (this.transform.position.y > 1)
         {
             Destroy(this.gameObject);
         }

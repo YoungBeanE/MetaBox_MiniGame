@@ -14,35 +14,33 @@ public class TowerBulletSpawn_W : MonoBehaviour
 
     float timeAfterSpawn;
 
-    Transform target; // 발사할 대상
+    Transform target = null; // 발사할 대상
 
     void Start()
     {
         //최근 생성 이후의 누적 시간을 0으로 초기화
         timeAfterSpawn = 0f;
-
-        target = FindObjectOfType<Monster>().transform;
     }
-
 
 
     void Update()
     {
-        timeAfterSpawn += Time.deltaTime;
-        //Debug.Log("timeAfterSpawn : " + timeAfterSpawn);
-
-        if(timeAfterSpawn >= spawntime) 
-        {
-            //Debug.Log("timeAfterSpawn : " + timeAfterSpawn);
-
-            // 누적된 시간을 리셋
-            timeAfterSpawn = 0f;
-
-            TowerBullet bullet = TowerBulletPool.Inst.CreateBullet(BulletPos.position);
-        }
-
+        
+        WavwStart_BulletSpawn();
 
     }
 
+    public void WavwStart_BulletSpawn()
+    {
+        target = FindObjectOfType<Monster>().transform;
 
+        timeAfterSpawn += Time.deltaTime;
+
+        if (timeAfterSpawn >= spawntime)
+        {
+            // 누적된 시간을 리셋
+            timeAfterSpawn = 0f;
+            TowerBullet bullet = TowerBulletPool.Inst.CreateBullet(BulletPos.position);
+        }
+    }
 }
