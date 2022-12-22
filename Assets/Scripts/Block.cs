@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer spriteRenderer = null;
+    [SerializeField] Sprite road = null;
+
+    public bool IsBlock { get; set; } = true;
+    Vector2 myPos;
+
     [SerializeField] GameObject TowerPerfab = null;
 
     GameObject Tower = null;
@@ -15,10 +21,17 @@ public class Block : MonoBehaviour
 
     void Awake()
     {
+        myPos = transform.position;
+    }
+    public void Select()
+    {
+        IsBlock = false;
+        spriteRenderer.sprite = road;
 
     }
 
-    // Å¸¿ö »ý¼º
+    
+    // Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public void Inst_Towers(Transform instPos)
     {
         check = UIManager.Inst.CreatTowerNum;
@@ -35,11 +48,10 @@ public class Block : MonoBehaviour
         }
     }
 
-    // Å¸¿ö »èÀç
     public void Destroy_Towers()
     {
         Destroy(TowerPerfab.gameObject);
-        Debug.Log("»èÁ¦ÇÔ??");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½??");
     }
 
 }
