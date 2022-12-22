@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] SpriteRenderer spriteRenderer = null;
+    [SerializeField] Sprite road = null;
 
-    // Update is called once per frame
-    void Update()
+    public bool IsBlock { get; set; } = true;
+    Vector2 myPos;
+
+    private void Awake()
     {
-        
+        myPos = transform.position;
     }
+    public void Select()
+    {
+        IsBlock = false;
+        spriteRenderer.sprite = road;
+    }
+    
 }
