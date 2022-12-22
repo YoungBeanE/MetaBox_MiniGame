@@ -25,10 +25,13 @@ public class UIManager : MonoBehaviour
         }
     }
     #endregion
-
+    [Header("재화")]
     [SerializeField] TextMeshProUGUI GoldNumText = null;
+    [Header("타워 설치가능한 수량")]
     [SerializeField] TextMeshProUGUI towerNum = null;
-
+    [Header("플레이어 체력")]
+    [SerializeField] GameObject[] playerHp = null;
+    [Header("게임 종료")]
     [SerializeField] GameObject GameOver = null;
 
     public Action<int> towerCountCheck;
