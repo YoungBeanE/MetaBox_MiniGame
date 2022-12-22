@@ -99,9 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletspeed: 1.2
-  attack: 5
-  spawntime: 1.2
-  BulletPos: {fileID: 0}
 --- !u!70 &3871890146586694524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -112,7 +109,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

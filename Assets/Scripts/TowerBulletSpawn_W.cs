@@ -25,14 +25,12 @@ public class TowerBulletSpawn_W : MonoBehaviour
 
     void Update()
     {
-        
         WavwStart_BulletSpawn();
-
     }
 
     public void WavwStart_BulletSpawn()
     {
-        target = FindObjectOfType<Monster>().transform;
+        //target = FindObjectOfType<Monster>().transform;
 
         timeAfterSpawn += Time.deltaTime;
 

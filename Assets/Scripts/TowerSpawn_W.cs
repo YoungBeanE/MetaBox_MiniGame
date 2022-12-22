@@ -6,14 +6,16 @@ using Unity.VisualScripting;
 
 public class TowerSpawn_W : MonoBehaviour
 {
-    int check = 1;
+    int check = 0;
     int CreatTower = 0;
 
     GameObject tower = null;
+    GameObject map = null;
     Block block = null;
 
     void Awake()
     {
+        map = GameObject.FindGameObjectWithTag("Map");
         block = GetComponent<Block>();
     }
 
@@ -24,6 +26,7 @@ public class TowerSpawn_W : MonoBehaviour
         {
             RayCheck();
         }
+
     }
 
     void RayCheck()
@@ -36,43 +39,40 @@ public class TowerSpawn_W : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(MousePosition, transform.forward, 20f);
         Debug.DrawRay(MousePosition, transform.forward * 100, Color.blue, 0.3f);
 
-        if(hit)
+        if (hit)
         {
-            int chenctower = CheckMapTowerNum();
-            UIManager.Inst.Glod_Minus();
-            int check = UIManager.Inst.checkOriginCount;
+            int checks = UIManager.Inst.checkOriginCount;
 
-            if(chenctower <= check)
+            Debug.Log("## 0 Find Tower num : " + check);
+
+            if (check < checks)
             {
-                Debug.Log("## 들어갔니");
-                hit.transform.GetComponent<Block>().Inst_Towers(hit.transform);
+                Debug.Log("## 1 Find Tower num : " + check);
+                Debug.Log("checks : " + checks);
+
+                if (hit.collider.name.Equals("Block(Clone)"))
+                {
+                    hit.transform.GetComponent<Block>().Inst_Towers(hit.transform);
+                    check += 1;
+                    UIManager.Inst.Glod_Minus();
+                    Debug.Log("##타워 만들어 : " + check);
+                }
+
+                if (hit.collider.name.Equals("Tower(Clone)"))
+                {
+                    Destroy(hit.transform.gameObject);
+                    check -= 1;
+                    UIManager.Inst.Glod_DeldetTowerPlus();
+                    Debug.Log("##타워 삭제함" + check);
+                }
+            }
+            else if ( check == checks)
+            {
+                Debug.Log("checks 2: " + checks);
+                Debug.Log("hit.name" + hit.collider.name);
+
+
             }
         }
     }
-
-    void RayCheckDoubleObj()
-    {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.forward, 100f);
-
-        for (int i = 0; i < hits.Length; i++)
-        {
-            Debug.Log("hits.Length" + hits.Length);
-            RaycastHit2D hit = hits[i];
-        }
-    }
-
-    int CheckMapTowerNum()
-    {
-        tower = GameObject.FindGameObjectWithTag("Tower");
-
-        if (tower != null)
-        {
-            check += 1;
-
-            return check;
-        }
-
-        return check;
-    }
-
 }

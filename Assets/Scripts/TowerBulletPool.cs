@@ -56,7 +56,5 @@ public class TowerBulletPool : MonoBehaviour
     {
         prefabMob.gameObject.SetActive(false);
         pool.Enqueue(prefabMob);
-
     }
-
 }

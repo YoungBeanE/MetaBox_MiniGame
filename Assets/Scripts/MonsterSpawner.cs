@@ -32,10 +32,7 @@ public class MonsterSpawner : MonoBehaviour
     void OnClick_WaveStart()
     {
         StartCoroutine(nameof(SpawnMonster));
-        //waveStart.interactable = false;
         waveStart.gameObject.SetActive(false);
-        TowerSpawn_W check = GameObject.FindObjectOfType<TowerSpawn_W>();
-        bool towerSpawn_ = gameObject.GetComponent<TowerSpawn_W>().enabled = false;
     }
 
     IEnumerator SpawnMonster()

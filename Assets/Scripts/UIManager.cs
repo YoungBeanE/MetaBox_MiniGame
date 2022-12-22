@@ -79,8 +79,10 @@ public class UIManager : MonoBehaviour
     public void Glod_DeldetTowerPlus()
     {
         Wave1_coin += 70;
+        if (Wave1_coin >= 150) return;
         GoldNumText.text = $"Gold : {Wave1_coin.ToString()}";
         towerText_Plus();
+
     }
 
     int towerText_Plus()

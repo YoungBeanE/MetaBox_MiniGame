@@ -8,6 +8,8 @@ TagManager:
   - Block
   - Map
   - Tower
+  - Monster
+  - Mon
   layers:
   - Default
   - TransparentFX
