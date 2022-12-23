@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TimeLine
+  - Block
+  - Map
+  - Tower
+  - Monster
+  - Mon
   layers:
   - Default
   - TransparentFX

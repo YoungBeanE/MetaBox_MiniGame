@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1819071024846706017}
   m_Layer: 0
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6201782812843221913}
   road: {fileID: 21300000, guid: 173f0004e13cd2f4180bccd58e11b43e, type: 3}
+  TowerPerfab: {fileID: 5415659283456834953, guid: 1d3c5f66635689a4eb11370678cd62f5, type: 3}
+  countUp: 0
 --- !u!61 &1819071024846706017
 BoxCollider2D:
   m_ObjectHideFlags: 0
