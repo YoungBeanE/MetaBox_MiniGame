@@ -45,7 +45,7 @@ public class TowerSpawn_W : MonoBehaviour
 
             Debug.Log("## 0 Find Tower num : " + check);
 
-            if (check < checks)
+            if (check <= checks)
             {
                 Debug.Log("## 1 Find Tower num : " + check);
                 Debug.Log("checks : " + checks);

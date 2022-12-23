@@ -7,13 +7,13 @@ public class TowerBullet : MonoBehaviour
 {
     [SerializeField] protected float bulletspeed = 1.2f;  // �Ѿ� ���ǵ�
     Vector2 myPos;
-    Transform target = null;
+    //Transform target = null;
     CapsuleCollider2D capsuleCollider = null;
     private void Awake()
     {
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         myPos = transform.position;
-        target = GameObject.FindGameObjectWithTag("Monster").transform;
+        //target = GameObject.FindGameObjectWithTag("Mon").transform;
     }
 
     void Update()
@@ -28,24 +28,17 @@ public class TowerBullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        RotateTarget(myPos);
+        //RotateTarget(myPos);
         this.transform.Translate(Vector3.up * this.bulletspeed * Time.deltaTime);
     }
 
-    public void RotateTarget(Vector2 pos)
-    {
-        float dx = target.position.x - pos.x;
-        float dy = target.position.y - pos.y;
-
-        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, degree);
-    }
+    
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Mon")
         {
-            collision.transform.GetComponent<Monster>().Die();
+            collision.transform.GetComponent<Monster>().Attack();
             Destroy(this.gameObject);
         }
     }

@@ -67,16 +67,16 @@ public class UIManager : MonoBehaviour
         towerNum.text = $"Tower : {CreatTowerNum.ToString()}";
         playerHPText.text = $"HP : {playerHP}";
     }
-    public void PlayerHP_Minus()
+    public void PlayerHP_Minus(int damage)
     {
-        if (playerHP < 0) return;
-        playerHP--;
-        playerHPText.text = $"HP : {playerHP}";
-        if(playerHP == 0)
+        playerHP -= damage;
+        if (playerHP <= 0)
         {
+            playerHPText.text = $"HP : 0";
             GameOver.gameObject.SetActive(true);
             gameOverText.text = "You Lose";
         }
+        else playerHPText.text = $"HP : {playerHP}";
     }
     public void Win()
     {
