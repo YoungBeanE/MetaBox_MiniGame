@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerBullet : MonoBehaviour
 {
-    [SerializeField] protected float bulletspeed = 1.2f;  // ÃÑ¾Ë ½ºÇÇµå
+    [SerializeField] protected float bulletspeed = 1.2f;  // ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½Çµï¿½
     Vector2 myPos;
     CapsuleCollider2D capsuleCollider = null;
     private void Awake()

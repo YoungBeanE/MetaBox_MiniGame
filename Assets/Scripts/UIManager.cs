@@ -7,7 +7,7 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
-    #region ½Ì±ÛÅÏ
+    #region ï¿½Ì±ï¿½ï¿½ï¿½
     private static UIManager instance;
     public static UIManager Inst
     {
@@ -26,22 +26,22 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
-    [Header("°ÔÀÓ ½ÃÀÛ ÆÇ³Ú")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½")]
     [SerializeField] GameObject TitlePanel = null;
     [SerializeField] GameObject block = null;
 
-    [Header("ÀÎ°ÔÀÓ UI")]
+    [Header("ï¿½Î°ï¿½ï¿½ï¿½ UI")]
     [SerializeField] GameObject InGameUI = null;
 
-    [Header("°ÔÀÓ Á¾·á ÆÇ³Ú")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½")]
     [SerializeField] GameObject GameOver = null;
     [SerializeField] TextMeshProUGUI gameOverText = null;
 
-    [Header("ÀçÈ­UI")]
+    [Header("ï¿½ï¿½È­UI")]
     [SerializeField] TextMeshProUGUI GoldNumText = null;
-    [Header("Å¸¿ö ¼³Ä¡°¡´ÉÇÑ ¼ö·®UI")]
+    [Header("Å¸ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½UI")]
     [SerializeField] TextMeshProUGUI towerNum = null;
-    [Header("ÇÃ·¹ÀÌ¾î Ã¼·ÂUI")]
+    [Header("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ã¼ï¿½ï¿½UI")]
     [SerializeField] TextMeshProUGUI playerHPText = null;
     [SerializeField] GameObject[] playerHps = null;
 
@@ -94,7 +94,7 @@ public class UIManager : MonoBehaviour
 
     public void Glod_Minus()
     {
-        // ÄÚÀÎ ÅØ½ºÆ®¿¡ -70 ÇØÁÖ±â;
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ -70 ï¿½ï¿½ï¿½Ö±ï¿½;
         Wave1_coin -= 70;
         if (Wave1_coin < 0) return;
         GoldNumText.text = $"Gold : {Wave1_coin.ToString()}";
@@ -131,14 +131,14 @@ public class UIManager : MonoBehaviour
 
     }
 
-    #region ½ºÅ¸Æ® ÆÇ³Ú
+    #region ï¿½ï¿½Å¸Æ® ï¿½Ç³ï¿½
     public void Onclick_StartButton()
     {
         if (TitlePanel.activeInHierarchy == true)
         {
             activeBlock();
             TitlePanel.SetActive(false);
-            // ÀÎ°ÔÀÓ ÆÇ³Ú ¹× Å¸¿ö»ý¼º È°¼ºÈ­
+            // ï¿½Î°ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½ ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­
             InGameUI.SetActive(true);
             towerspawn.SetActive(true);
         }

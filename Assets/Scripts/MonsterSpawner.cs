@@ -45,7 +45,10 @@ public class MonsterSpawner : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             Monster mob = Instantiate<Monster>(monsterPref0, map.myPath[0], Quaternion.identity,this.transform);
+<<<<<<< HEAD
             mob.callBackDie = DeadMonster;
+=======
+>>>>>>> origin/Wally
             mob.SettingPath(map.myPath);
             yield return s1;
         }
