@@ -57,7 +57,7 @@ public class Block : MonoBehaviour
 
     public int checkChildCount()
     {
-        checkChild = this.transform.GetChildCount();
+        checkChild = this.transform.childCount;
         countUp += 1;
 
         return countUp;
