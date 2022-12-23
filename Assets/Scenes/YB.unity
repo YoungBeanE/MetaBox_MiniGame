@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 393646646}
   - component: {fileID: 393646645}
   - component: {fileID: 393646648}
+  - component: {fileID: 393646649}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -452,7 +453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: -340}
+  m_AnchoredPosition: {x: 45, y: -250}
   m_SizeDelta: {x: 650, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393646645
@@ -575,6 +576,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1282320607}
   block: {fileID: 1411769555}
+--- !u!95 &393646649
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393646643}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4717025a9b1f2244f9234955a5ec7d3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &434839295
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,8 +968,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC6B0\uB2F9\uD0D5\uD0D5\n\uD0C0\uC6CC\uB514\uD39C\uC2A4"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d606db582bd785c4d9c3ac3365c2dd42, type: 2}
-  m_sharedMaterial: {fileID: 937687535666246160, guid: d606db582bd785c4d9c3ac3365c2dd42, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 89ead986fd47539479912fd5f7db8187, type: 2}
+  m_sharedMaterial: {fileID: 4942160610800778525, guid: 89ead986fd47539479912fd5f7db8187, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1936,8 +1957,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: START
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d606db582bd785c4d9c3ac3365c2dd42, type: 2}
-  m_sharedMaterial: {fileID: 937687535666246160, guid: d606db582bd785c4d9c3ac3365c2dd42, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 89ead986fd47539479912fd5f7db8187, type: 2}
+  m_sharedMaterial: {fileID: 4942160610800778525, guid: 89ead986fd47539479912fd5f7db8187, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
