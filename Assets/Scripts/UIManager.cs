@@ -26,22 +26,19 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
-    [Header("���� ���� �ǳ�")]
     [SerializeField] GameObject TitlePanel = null;
     [SerializeField] GameObject block = null;
 
-    [Header("�ΰ��� UI")]
     [SerializeField] GameObject InGameUI = null;
 
-    [Header("���� ���� �ǳ�")]
     [SerializeField] GameObject GameOver = null;
     [SerializeField] TextMeshProUGUI gameOverText = null;
 
-    [Header("��ȭUI")]
+
     [SerializeField] TextMeshProUGUI GoldNumText = null;
-    [Header("Ÿ�� ��ġ������ ����UI")]
+
     [SerializeField] TextMeshProUGUI towerNum = null;
-    [Header("�÷��̾� ü��UI")]
+
     [SerializeField] TextMeshProUGUI playerHPText = null;
     [SerializeField] GameObject[] playerHps = null;
 
@@ -67,14 +64,14 @@ public class UIManager : MonoBehaviour
         CreatTowerNum = (Wave1_coin / tower_bycoin);
         checkOriginCount = CreatTowerNum;
         //Debug.Log(checkOriginCount);
-        towerNum.text = $"Tower :{CreatTowerNum.ToString()}";
-        playerHPText.text = $"HP :{playerHP}";
+        towerNum.text = $"Tower : {CreatTowerNum.ToString()}";
+        playerHPText.text = $"HP : {playerHP}";
     }
     public void PlayerHP_Minus()
     {
         if (playerHP < 0) return;
         playerHP--;
-        playerHPText.text = $"HP :{playerHP}";
+        playerHPText.text = $"HP : {playerHP}";
         if(playerHP == 0)
         {
             GameOver.gameObject.SetActive(true);
@@ -104,16 +101,15 @@ public class UIManager : MonoBehaviour
     public void Glod_DeldetTowerPlus()
     {
         Wave1_coin += 70;
-        if (Wave1_coin >= 150) return;
         GoldNumText.text = $"Gold : {Wave1_coin.ToString()}";
         towerText_Plus();
-
+        if (Wave1_coin >= 150) return;
     }
 
     int towerText_Plus()
     {
         CreatTowerNum += 1;
-        towerNum.text = $"Tower :{CreatTowerNum.ToString()}";
+        towerNum.text = $"Tower : {CreatTowerNum.ToString()}";
         //Debug.Log("CreatTowerNum" + CreatTowerNum);
         return CreatTowerNum;
 
@@ -125,7 +121,7 @@ public class UIManager : MonoBehaviour
         if (CreatTowerNum <= 0) return 0;
 
         CreatTowerNum -= 1;
-        towerNum.text = $"Tower :{CreatTowerNum.ToString()}";
+        towerNum.text = $"Tower : {CreatTowerNum.ToString()}";
         //Debug.Log("CreatTowerNum" + CreatTowerNum);
         return CreatTowerNum;
 

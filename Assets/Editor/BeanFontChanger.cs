@@ -9,7 +9,7 @@ namespace BeanTool
 {
     public class BeanFontChanger
     {
-        public const string PATH_FONT_TEXTMESHPRO_M = "Assets/TextMesh Pro/Fonts/Maplestory Light SDF.asset";
+        public const string PATH_FONT_TEXTMESHPRO_M = "Assets/Fonts/CookieRun Bold SDF_Fin.asset";
 
         [MenuItem("BeanTool/BeanFontChanger")]
         public static void ChangeFont()

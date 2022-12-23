@@ -66,13 +66,7 @@ public class TowerSpawn_W : MonoBehaviour
                     Debug.Log("##타워 삭제함" + check);
                 }
             }
-            else if ( check == checks)
-            {
-                Debug.Log("checks 2: " + checks);
-                Debug.Log("hit.name" + hit.collider.name);
-
-
-            }
+           
         }
     }
 }
